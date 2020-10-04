@@ -27,6 +27,7 @@ namespace Practica1
 
         static string GetStr()
         {
+            Console.WriteLine("Введите строку:");
             string str=Console.ReadLine();
             return str;
         }
@@ -34,6 +35,7 @@ namespace Practica1
         {
             string num_str;
             int num;
+            Console.WriteLine("Введите задержку:");
             do
             {
                 num_str=Console.ReadLine();
@@ -45,7 +47,7 @@ namespace Practica1
         static bool GetAnswer()
         {
             bool answer=false;
-            Console.WriteLine("Повторить?\nДа/Нет-Y/N:");
+            Console.WriteLine("\nПовторить?\nДа/Нет-Y/N:");
             string answer_str=Console.ReadLine();
             answer_str = answer_str.ToUpper();
             answer = answer_str.Contains('Y');
@@ -55,13 +57,13 @@ namespace Practica1
         static void ShowStr(string str,int time)
         {
 
-
             Console.Clear();
             foreach (char letter in str)
             {
-                Console.WriteLine(letter);
+                string str1 = letter.ToString();
+                //str1 = str1.Replace(Environment.NewLine, " ");
+                Console.Write(str1);
                 Thread.Sleep(time);
-
             }
         }
 
@@ -72,6 +74,5 @@ namespace Practica1
             int time = GetTime();
             ShowStr(str, time);
         }
-
     }
 }
